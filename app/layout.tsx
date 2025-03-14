@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Fira_Code } from "next/font/google";
 import "./globals.css";
 
-const firaCode = Fira_Code();
+const firaCode = Fira_Code({
+  preload: false
+});
 
 export const metadata: Metadata = {
   title: "Sayato",

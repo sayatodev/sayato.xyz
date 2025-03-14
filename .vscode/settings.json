@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "Sayato" // For spell checker extension
-    ]
+    ],
+    "cSpell.enabledFileTypes": {
+        "plaintext": false
+    }
 }

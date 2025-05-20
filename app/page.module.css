@@ -1,34 +1,40 @@
+.pageStyler {
+  padding: 80px;
+  gap: 64px;
+  font-weight: bold;
+  overflow-y: auto;
+  height: 100svh;
+}
+
 .page {
+  /* Cursor animation controller */
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
 
-  --button-primary-hover: #383838;
+  --button-primary-hover: #2b2b2b;
   --button-secondary-hover: #f2f2f2;
 
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
+  height: 100svh;
   font-family: var(--font-geist-sans);
   position: relative;
   border: none;
-  font-weight: bold;
   cursor: none;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 /* phone */
 @media screen and (max-width: 600px) {
-  .page {
+  .pageStyler {
     padding: 48px;
   }
 }
 
 .page::after {
+  /* for cursor animation */
+  pointer-events: none;
   content: "";
   position: absolute;
-  overflow: visible;
   top: calc(var(--y, 0) * 1px - 100px);
   left: calc(var(--x, 0) * 1px - 100px);
   width: 200px;
@@ -46,13 +52,18 @@
 .section_container {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 1em;
   width: 100%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
 }
 
 .header {
-  /* code font */
-  font-family: var(--font-geist-mono);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em 0;
   font-size: 48px;
   font-weight: bold;
   color: var(--geist-foreground);
@@ -68,4 +79,66 @@
   text-align: left;
   width: 100%;
   white-space: nowrap;
+}
+
+.bordered {
+  border: var(--foreground) solid 1px;
+  font-weight: normal;
+  padding: 1em;
+}
+
+.chipGallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1em;
+}
+
+.linkChip,
+.linkChipSmall {
+  position: relative;
+  display: grid;
+  background-color: var(--background-secondary);
+  box-shadow: 2px 2px 3px var(--background-shadow);
+  height: 100%;
+}
+
+.linkChip:hover,
+.linkChipSmall:hover {
+  background-color: var(--button-primary-hover);
+  cursor: none;
+}
+
+.linkChip {
+  grid-template-areas:
+    "image title"
+    "image description";
+  grid-template-columns: 50px 3fr;
+  gap: 0 1em;
+  padding: 1em;
+}
+
+.linkChipSmall {
+  grid-template-areas:
+    "title"
+    "description";
+  gap: 0 1em;
+  padding: 0.75em;
+}
+
+.linkChipSmall > * {
+  font-size: 0.85rem;
+}
+
+.linkHighlight {
+  width: 2px;
+  height: 100%;
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.linkChipImg {
+  grid-area: image;
 }

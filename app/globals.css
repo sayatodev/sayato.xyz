@@ -1,16 +1,19 @@
 :root {
-  --background: #282c34;
   --foreground: #ededed;
+  --background: #21252b;
+  --background-secondary: #32363b;
+  --background-shadow: #1e2022;
 }
 
 html,
 body {
-  max-width: 100vw;
+  width: 100vw;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 body {
-  color: var(--foreground); 
+  color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;

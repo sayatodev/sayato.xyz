@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <PageContainer>
       <div className={styles.pageStyler}>
-        <SectionContainer mono>
+        <SectionContainer mono noAnimation>
           <h2 className={styles.header}>
             <span>Sayato</span>&nbsp;
             <span className={styles.header_supp}>/ Isaac Ma</span>

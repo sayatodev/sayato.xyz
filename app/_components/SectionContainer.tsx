@@ -1,4 +1,7 @@
+"use client"; // motion requires client rendering
+
 import * as React from "react";
+import { motion } from "motion/react";
 import styles from "../page.module.css";
 
 import { Fira_Code, Noto_Sans_JP } from "next/font/google";
@@ -14,6 +17,7 @@ export interface ISectionContainerProps {
   children: React.ReactNode;
   mono?: boolean;
   bordered?: boolean;
+  noAnimation?: boolean;
 }
 
 export function SectionContainer(props: ISectionContainerProps) {
@@ -24,5 +28,22 @@ export function SectionContainer(props: ISectionContainerProps) {
     " " +
     (props.bordered ? styles.bordered : "");
 
-  return <div className={classes}>{props.children}</div>;
+  const animated = !props.noAnimation;
+  const Element = animated ? motion.div : "div";
+
+  return (
+    <Element
+      className={classes}
+      {...(animated && {
+        initial: { y: 70, opacity: 0 },
+        whileInView: {
+          y: 0,
+          opacity: 1,
+          transition: { duration: 0.5, ease: "easeInOut" },
+        },
+      })}
+    >
+      {props.children}
+    </Element>
+  );
 }

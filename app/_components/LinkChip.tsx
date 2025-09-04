@@ -16,7 +16,13 @@ export function LinkChip(props: ILinkChipProps) {
   return (
     <Link
       href={props.url}
-      className={props.small ? styles.linkChipSmall : styles.linkChip}
+      className={
+        props.small
+          ? styles.linkChipSmall
+          : `${styles.linkChip} ${
+              !props.imageUrl && styles.linkChipNoThumbnail
+            }`
+      }
     >
       <div
         className={styles.linkHighlight}

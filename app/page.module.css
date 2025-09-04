@@ -142,3 +142,31 @@
 .linkChipImg {
   grid-area: image;
 }
+
+.linkChipNoThumbnail {
+  grid-template-areas:
+    "title"
+    "description";
+  grid-template-columns: 100%;
+}
+
+/* Insufficient space for showing two language cards horizontally */
+@media screen and (max-width: 700px) {
+  .chipGallery {
+    flex-direction: column;
+  }
+
+  .linkChip,
+  .linkChipSmall {
+    width: 100%;
+  }
+
+  .linkChip {
+    grid-template-areas:
+      "image title"
+      "description description";
+    grid-template-columns: 50px 3fr;
+    gap: 0 1em;
+    padding: 1em;
+  }
+}

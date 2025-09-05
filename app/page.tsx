@@ -107,7 +107,7 @@ export default function Home() {
               "A GPS-based Flight Statistics Tracker.\nDisplays your real-time speed, altitude, vertical speed and more in-flight.\nWorks offline once the service worker is installed."
             }
             color="#fff"
-            url="https://github.com/sayatodev/aviameter"
+            url="https://aviameter.sayato.xyz/"
             imageUrl="/project_thumbnails/aviameter.png"
           />
           <LinkChip
@@ -116,7 +116,7 @@ export default function Home() {
               "The All-in-one tool for Calculator Programs.\nWritten in NextJS + TypeScript\nIncludes an interpreter that can interpret calculator syntax (Written in TypeScript)."
             }
             color="#fff"
-            url="https://github.com/sayatodev/progex"
+            url="https://progex.sayato.xyz/"
           />
           <LinkChip
             title="Siu Ying (Discord Bot)"

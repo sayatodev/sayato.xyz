@@ -18,6 +18,7 @@ export interface ISectionContainerProps {
   mono?: boolean;
   bordered?: boolean;
   noAnimation?: boolean;
+  coloured?: boolean;
 }
 
 export function SectionContainer(props: ISectionContainerProps) {
@@ -26,7 +27,9 @@ export function SectionContainer(props: ISectionContainerProps) {
     " " +
     (props.mono ? firaCode.className : NotoSans.className) +
     " " +
-    (props.bordered ? styles.bordered : "");
+    (props.bordered ? styles.bordered : "") +
+    " " +
+    (props.coloured ? styles.coloured : "");
 
   const animated = !props.noAnimation;
   const Element = animated ? motion.div : "div";

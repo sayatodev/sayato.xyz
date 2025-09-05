@@ -10,11 +10,11 @@ export default function Home() {
       <div className={styles.pageStyler}>
         <SectionContainer mono noAnimation>
           <h2 className={styles.header}>
-            <span>Sayato</span>&nbsp;
+            <span>Sayato</span>
             <span className={styles.header_supp}>/ Isaac Ma</span>
           </h2>
         </SectionContainer>
-        <SectionContainer mono bordered>
+        <SectionContainer mono bordered coloured>
           <pre>README.md</pre>
           <h3># Who am I?</h3>
           <p>
@@ -126,7 +126,7 @@ export default function Home() {
             url="https://github.com/sayatodev/sayato.xyz"
           />
         </SectionContainer>
-        <SectionContainer mono bordered>
+        <SectionContainer mono bordered coloured>
           <pre>INFO.md</pre>
           <h3># More about me</h3>
           <p>

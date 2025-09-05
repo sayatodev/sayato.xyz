@@ -59,7 +59,7 @@ export default function Home() {
             />
             <LinkChip
               imageUrl="/language_thumbnails/vue.svg"
-              title="VueJS"
+              title="Vue.js"
               description="With 1-month internship experience"
               color="#3fb27f"
               url="https://vuejs.org/"
@@ -68,7 +68,7 @@ export default function Home() {
           <div className={styles.chipGallery}>
             <LinkChip
               small
-              title="NextJS"
+              title="Next.js"
               description="Writing since 2023"
               color="black"
               url="https://nextjs.org/"
@@ -79,6 +79,13 @@ export default function Home() {
               description="Writing since 2022"
               color="#397cc6"
               url="https://www.postgresql.org/"
+            />
+            <LinkChip
+              small
+              title="Unity C#"
+              description="With 2-month internship experience"
+              color="#000000"
+              url="https://unity.com/"
             />
           </div>
         </SectionContainer>

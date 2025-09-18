@@ -1,14 +1,25 @@
 .blogListContainer {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .hintText {
-    width: min-content;
-    margin: 0 auto;
-    text-align: left;
-    font-size: 1.3em;
-    color: #aeb2b5;
-    margin-top: -0.5em;
-    margin-bottom: 1em;
+  width: min-content;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1.3em;
+  color: #aeb2b5;
+  margin-top: -0.5em;
+  margin-bottom: 1em;
+}
+
+@media screen and (max-width: 600px) {
+  .hintText {
+    font-size: 1.2em;
+    white-space: wrap;
+    text-wrap: break-word;
+    overflow: hidden;
+    width: fit-content;
+  }
 }

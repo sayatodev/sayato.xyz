@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <SectionContainer mono>
-        <div className={styles.blogContainer}>
+        <div className={styles.blogListContainer}>
           <pre className={styles.hintText}>
             ┌──(sayato@procrastination101)-[~]
             <br />

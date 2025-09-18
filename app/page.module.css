@@ -1,12 +1,12 @@
 .pageStyler {
-  padding: 80px;
+  padding: 32px 80px;
   gap: 64px;
   font-weight: bold;
   overflow-y: auto;
   height: 100svh;
 }
 
-.page {
+.page[data-cursor-animation] {
   /* Cursor animation controller */
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
@@ -23,7 +23,7 @@
   overflow: hidden;
 }
 
-.page::after {
+.page[data-cursor-animation]::after {
   /* for cursor animation */
   pointer-events: none;
   content: "";
@@ -38,8 +38,12 @@
   transition: opacity 0.2s;
 }
 
-.page:hover::after {
+.page[data-cursor-animation]:hover::after {
   opacity: 0.05;
+}
+
+.page:not([data-cursor-animation]) a {
+  cursor: pointer;
 }
 
 .section_container {
@@ -55,14 +59,18 @@
 
 .header {
   display: flex;
-  flex-direction: column;
-  gap: 0.3em 0;
+  gap: 0 0.3em;
+  align-items: baseline;
   font-size: 48px;
   font-weight: bold;
   color: var(--geist-foreground);
   text-align: left;
   width: 100%;
   line-height: 0.8;
+}
+
+.header * {
+  min-width: fit-content;
 }
 
 .header_supp {
@@ -134,6 +142,47 @@
 
 .linkChipImg {
   grid-area: image;
+  /* Crop circle */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.navContainer {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.05);
+  gap: 0.3em;
+  padding: 0.2em;
+  border-radius: 0.8em;
+  margin-bottom: 1.5em;
+  box-shadow: 2px 2px 4px var(--background-shadow);
+}
+
+.navSpacer {
+  flex-grow: 1;
+}
+
+.navItem {
+  font-size: 1.2em;
+  padding: 0.2em 0.8em;
+  border-radius: 0.5em;
+  font-weight: normal;
+}
+
+.navItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.2s;
+}
+
+/* current page */
+.navItem[data-active="true"] {
+  background-color: var(--button-primary-hover);
+}
+
+/* nav toggles inactive state */
+.navItem.inactive {
+  opacity: 50%;
 }
 
 /* phone */
@@ -188,10 +237,18 @@
   grid-template-columns: 100%;
 }
 
+.noMarginBottom {
+  margin-bottom: 0;
+}
+
 .coloured pre {
   color: #afb4bb;
 }
 
 .coloured h3 {
   color: #93abcf;
+}
+
+.italics {
+  font-style: italic;
 }

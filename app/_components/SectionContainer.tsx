@@ -19,6 +19,7 @@ export interface ISectionContainerProps {
   bordered?: boolean;
   noAnimation?: boolean;
   coloured?: boolean;
+  noMargin?: boolean;
 }
 
 export function SectionContainer(props: ISectionContainerProps) {
@@ -29,7 +30,9 @@ export function SectionContainer(props: ISectionContainerProps) {
     " " +
     (props.bordered ? styles.bordered : "") +
     " " +
-    (props.coloured ? styles.coloured : "");
+    (props.coloured ? styles.coloured : "") +
+    " " +
+    (props.noMargin ? styles.noMarginBottom : "");
 
   const animated = !props.noAnimation;
   const Element = animated ? motion.div : "div";

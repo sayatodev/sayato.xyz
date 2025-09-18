@@ -1,0 +1,14 @@
+.blogContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.hintText {
+    width: min-content;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 1.3em;
+    color: #aeb2b5;
+    margin-top: -0.5em;
+    margin-bottom: 1em;
+}

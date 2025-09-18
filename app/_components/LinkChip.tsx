@@ -10,6 +10,7 @@ export interface ILinkChipProps {
   color: string;
   url: string;
   small?: boolean;
+  cropImage?: boolean;
 }
 
 export function LinkChip(props: ILinkChipProps) {
@@ -17,11 +18,9 @@ export function LinkChip(props: ILinkChipProps) {
     <Link
       href={props.url}
       className={
-        props.small
-          ? styles.linkChipSmall
-          : `${styles.linkChip} ${
-              !props.imageUrl && styles.linkChipNoThumbnail
-            }`
+        (props.small ? styles.linkChipSmall : styles.linkChip) +
+        " " +
+        (props.imageUrl ? "" : styles.linkChipNoThumbnail)
       }
     >
       <div
@@ -34,7 +33,9 @@ export function LinkChip(props: ILinkChipProps) {
           width={50}
           height={50}
           alt={`Logo of ${props.title}`}
-          className={styles.linkChipImg}
+          className={
+            styles.linkChipImg + " " + (props.cropImage ? styles.crop : "")
+          }
         />
       )}
       <h3 style={{ gridArea: "title" }}>{props.title}</h3>

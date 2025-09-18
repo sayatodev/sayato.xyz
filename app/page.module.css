@@ -142,9 +142,9 @@
 
 .linkChipImg {
   grid-area: image;
-  /* Crop circle */
-  width: 50px;
-  height: 50px;
+}
+
+.linkChipImg.crop {
   border-radius: 50%;
   object-fit: cover;
 }
@@ -191,10 +191,21 @@
     padding: 48px 24px;
   }
 
-  .header span {
-    width: 100%;
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3em;
+    white-space: nowrap;
+    font-size: 3em;
+  }
+
+  .header_supp {
     text-align: center;
-    display: block;
+    font-size: 0.4em;
+  }
+
+  .section_container {
+    font-size: 0.8em;
   }
 }
 

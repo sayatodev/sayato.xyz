@@ -127,6 +127,7 @@ export default function Home() {
           color="#fff"
           url="https://github.com/sayatodev/siu-ying-v2"
           imageUrl="/project_thumbnails/siuying.png"
+          cropImage
         />
         <LinkChip
           title="sayato.xyz"

@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <SectionContainer mono noAnimation>
         <h2 className={styles.header}>
-          <span>Sayato</span>
+          <span>Sayako</span>
           <div className={styles.header_supp}>
             <span className={styles.italics}>aka</span>&nbsp;
             <span>Isaac Ma</span>

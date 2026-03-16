@@ -171,7 +171,7 @@ export default function Home() {
             title="LinkedIn"
             description="Check out my profile on LinkedIn"
             color="#0274b3"
-            url="https://linkedin.com/in/zheng-qing-ma-607051310"
+            url="https://linkedin.com/in/zqma"
           />
         </div>
       </SectionContainer>

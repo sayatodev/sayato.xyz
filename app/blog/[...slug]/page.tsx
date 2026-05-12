@@ -8,6 +8,7 @@ import { getAllBlogSlugs, getBlogPost } from "../posts";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const rehypePrettyCodeOptions = {
   theme: "github-dark-default",
@@ -28,26 +29,36 @@ export default async function Page({
 
   return (
     <>
-      <div className={styles.postMeta}>
-        <Link href="/blog" className={styles.backLink}>
-          <FontAwesomeIcon icon={faArrowLeft} color="var(--foreground)" />
-        </Link>
-        {(post.metadata.date || post.metadata.tags?.length) && (
-          <>
-            {post.metadata.date && (
-              <time dateTime={post.metadata.date}>{post.metadata.date}</time>
-            )}
-            {!!post.metadata.tags?.length && (
-              <div className={styles.postTags}>
-                {post.metadata.tags.map((tag) => (
-                  <span key={tag} className={styles.postTag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
-          </>
-        )}
+      <div className={styles.postHeader}>
+        <div className={styles.postMeta}>
+          <Link href="/blog" className={styles.backLink}>
+            <FontAwesomeIcon icon={faArrowLeft} color="var(--foreground)" />
+          </Link>
+          {(post.metadata.date || post.metadata.tags?.length) && (
+            <>
+              {post.metadata.date && (
+                <time dateTime={post.metadata.date}>{post.metadata.date}</time>
+              )}
+              {!!post.metadata.tags?.length && (
+                <div className={styles.postTags}>
+                  {post.metadata.tags.map((tag) => (
+                    <span key={tag} className={styles.postTag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </>
+          )}
+        </div>
+        <div className={styles.actions}>
+          <Link
+            href={`https://github.com/sayatodev/sayato.xyz/blob/master/content/blog/${post.slug.join("/")}.md?plain=1`}
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faGithub} color="var(--foreground)" />
+          </Link>
+        </div>
       </div>
       <MarkdownAsync
         rehypePlugins={[rehypeRaw, [rehypePrettyCode, rehypePrettyCodeOptions]]}
@@ -55,6 +66,14 @@ export default async function Page({
       >
         {post.content}
       </MarkdownAsync>
+      <div className={styles.actionsMobile}>
+        <Link
+          href={`https://github.com/sayatodev/sayato.xyz/blob/master/content/blog/${post.slug.join("/")}.md?plain=1`}
+          target="_blank"
+        >
+          <FontAwesomeIcon icon={faGithub} color="var(--foreground)" />
+        </Link>
+      </div>
     </>
   );
 }

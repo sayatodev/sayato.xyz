@@ -95,16 +95,25 @@
 }
 
 .blogPost :not(pre) > code {
+  display: inline-block;
+  max-width: 100%;
   font-family: var(--font-geist-mono, "Fira Code", monospace);
   font-size: 0.95em;
   background-color: var(--background-secondary);
   box-shadow: 2px 2px 3px var(--background-shadow);
   border-radius: 0.35rem;
   padding: 0.18rem 0.45rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
 .blogPost pre {
+  width: 100%;
+  max-width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
   padding: 1rem 1.1rem;
   border-radius: 0.75rem;
   background-color: var(--background-secondary);
@@ -122,7 +131,11 @@
 }
 
 .blogPost figure[data-rehype-pretty-code-figure] {
+  width: 100%;
+  max-width: 100%;
   margin: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .blogPost [data-rehype-pretty-code-title] {

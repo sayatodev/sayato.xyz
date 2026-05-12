@@ -82,3 +82,15 @@ const getBlogPostBySlugPath = cache(async (slugPath: string) => {
 export async function getBlogPost(slug: string[]) {
   return getBlogPostBySlugPath(slug.join("/"));
 }
+
+export const getAllBlogPosts = cache(async () => {
+  const slugs = await getAllBlogSlugs();
+  const posts = await Promise.all(slugs.map(({ slug }) => getBlogPost(slug)));
+
+  return posts.sort((left, right) => {
+    const leftDate = left.metadata.date ?? "";
+    const rightDate = right.metadata.date ?? "";
+
+    return rightDate.localeCompare(leftDate);
+  });
+});

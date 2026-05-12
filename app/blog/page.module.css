@@ -1,6 +1,12 @@
 .blogListContainer {
   display: flex;
   flex-direction: column;
+  gap: 1.25rem;
+}
+
+.header {
+  margin: 0 auto;
+  font-size: 48px;
 }
 
 .hintText {
@@ -11,7 +17,63 @@
   font-size: 1.3em;
   color: #aeb2b5;
   margin-top: -0.5em;
-  margin-bottom: 1em;
+}
+
+.postList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.postCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1rem 1.1rem;
+  background-color: var(--background-secondary);
+  box-shadow: 2px 2px 4px var(--background-shadow);
+  border-radius: 0.75rem;
+}
+
+.postCard:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.postCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.postCardHeader h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.postCardHeader time {
+  color: #c6ccd4;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.postPath {
+  font-size: 0.95rem;
+  color: #93abcf;
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.tag {
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #d4dae2;
+  font-size: 0.85rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -21,5 +83,11 @@
     text-wrap: break-word;
     overflow: hidden;
     width: fit-content;
+  }
+
+  .postCardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 }

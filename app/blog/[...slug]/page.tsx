@@ -5,6 +5,9 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeRaw from "rehype-raw";
 import styles from "./page.module.css";
 import { getAllBlogSlugs, getBlogPost } from "../posts";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const rehypePrettyCodeOptions = {
   theme: "github-dark-default",
@@ -25,22 +28,27 @@ export default async function Page({
 
   return (
     <>
-      {(post.metadata.date || post.metadata.tags?.length) && (
-        <div className={styles.postMeta}>
-          {post.metadata.date && (
-            <time dateTime={post.metadata.date}>{post.metadata.date}</time>
-          )}
-          {!!post.metadata.tags?.length && (
-            <div className={styles.postTags}>
-              {post.metadata.tags.map((tag) => (
-                <span key={tag} className={styles.postTag}>
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
+      <div className={styles.postMeta}>
+        <Link href="/blog" className={styles.backLink}>
+          <FontAwesomeIcon icon={faArrowLeft} color="var(--foreground)" />
+        </Link>
+        {(post.metadata.date || post.metadata.tags?.length) && (
+          <>
+            {post.metadata.date && (
+              <time dateTime={post.metadata.date}>{post.metadata.date}</time>
+            )}
+            {!!post.metadata.tags?.length && (
+              <div className={styles.postTags}>
+                {post.metadata.tags.map((tag) => (
+                  <span key={tag} className={styles.postTag}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </>
+        )}
+      </div>
       <MarkdownAsync
         rehypePlugins={[rehypeRaw, [rehypePrettyCode, rehypePrettyCodeOptions]]}
         remarkPlugins={[remarkGfm]}

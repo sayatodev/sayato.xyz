@@ -104,7 +104,7 @@ But sadly, none of them matched. And the competition ended there.
 After the competition ended, we wondered why our approach did not work. After some more investigation, we found that... we had ONE critical mistake in our mental model.  
 
 ![Road 2 - actual layout](/blog_assets/2026/umdctf26-roads/road2_actual_osm_layout.png)
-![alt text](image.png)
+
 Did you notice anything special?  
 
 The road... has the metadata `lanes:backward=3;lanes:forward=2` on OpenStreetMap!  

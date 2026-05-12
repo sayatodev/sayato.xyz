@@ -143,7 +143,7 @@ export default function Home() {
           Besides programming language, I can also speak a few different
           &quot;real langauges&quot;!
           <br />I speak fluent Chinese (Cantonese/Putonghua), English and also
-          Japanese (Self-taught, JLPT N2)!
+          Japanese (Self-taught, JLPT N1)!
           <br />
           Apart from that, my other interests include music, cycling and
           photographing!

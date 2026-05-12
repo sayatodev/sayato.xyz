@@ -55,6 +55,7 @@
   color: #c6ccd4;
   font-size: 0.95rem;
   white-space: nowrap;
+  min-width: fit-content;
 }
 
 .postPath {

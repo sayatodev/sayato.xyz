@@ -3,6 +3,9 @@
   --background: #21252b;
   --background-secondary: #32363b;
   --background-shadow: #1e2022;
+
+  --button-primary-hover: #2b2b2b;
+  --button-secondary-hover: #f2f2f2;
 }
 
 html,

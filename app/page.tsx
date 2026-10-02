@@ -19,12 +19,12 @@ export default function Home() {
         <pre>README.md</pre>
         <h3># Who am I?</h3>
         <p>
-          I am currently a Year 1 student at the Hong Kong University of Science
-          and Technology. With a profound passion for programming, I have been
-          exploring different programming languages and tools since 2019, and
-          have now developed a variety of skills in both front-end and back-end
-          web development. I have always been eager to learn more in the world
-          of technology.
+          I am currently a Year 2 Computer Science student at the Hong Kong
+          University of Science and Technology. With a profound passion for
+          programming, I have been exploring different programming languages and
+          tools since 2019, and have now developed a variety of skills in both
+          front-end and back-end web development. I have always been eager to
+          learn more in the world of technology.
         </p>
       </SectionContainer>
       <SectionContainer>
